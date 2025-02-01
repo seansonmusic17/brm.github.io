@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensaje para Eduardo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(120deg, #89f7fe, #66a6ff);
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+    .hidden {
+      display: none;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .message {
+      color: #333;
+      font-size: 1.5em;
+      animation: fadeIn 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="codeForm">
+    <h1>Bienvenido, Eduardo 🌈</h1>
+    <p>Ingresa el código secreto para ver tu sorpresa:</p>
+    <input type="password" id="secretCode" placeholder="Código secreto">
+    <button onclick="checkCode()">Enviar</button>
+  </div>
+
+  <div class="container hidden" id="messageContainer">
+    <h1 class="message">¡Hola, mi amor! 🥰</h1>
+    <p class="message">Eres la luz de mi vida y cada día contigo es un regalo. 🌟</p>
+    <p class="message">Gracias por ser mi compañero en este viaje. Te amo más de lo que las palabras pueden expresar. 💖</p>
+  </div>
+
+  <script>
+    function checkCode() {
+      const code = document.getElementById('secretCode').value;
+      const correctCode = "teamoeduardo";
+      
+      if (code === correctCode) {
+        document.getElementById('codeForm').classList.add('hidden');
+        document.getElementById('messageContainer').classList.remove('hidden');
+      } else {
+        alert('Código incorrecto. Inténtalo de nuevo.');
+      }
+    }
+  </script>
+</body>
+</html>
